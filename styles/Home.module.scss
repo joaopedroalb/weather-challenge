@@ -1,0 +1,14 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #222;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    h1{
+        font-size: 3rem;
+    }
+}
