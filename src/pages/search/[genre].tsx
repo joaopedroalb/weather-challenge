@@ -34,7 +34,7 @@ export default function Search(){
         const dataAux:any = await axios.get(baseUrl,{
             headers:{
                 'x-rapidapi-host':"shazam.p.rapidapi.com",
-                'x-rapidapi-key':"9221e201d2msh8f2dd48774bac7cp1a4c89jsnbbc212832a62"
+                'x-rapidapi-key':process.env.NEXT_PUBLIC_SHAZAM_KEY!=null?process.env.NEXT_PUBLIC_SHAZAM_KEY:""
             },
             params:{
                 term:`${genreParams}`,

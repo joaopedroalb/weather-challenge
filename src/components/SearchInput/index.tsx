@@ -39,7 +39,7 @@ export default function SearchInput(){
 
     const searchFilterByCity = async () =>{
         if(city!=""){
-            const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=8cc4425f35ba29f093ad17a16105340d&units=metric`
+            const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WHEATHER_KEY}&units=metric`
             const data:any = await axios.get(baseUrl).then(resp=>resp.data);
             setTemp(data.main.temp);
             setStatusWeather(data.weather[0].main);
@@ -51,7 +51,7 @@ export default function SearchInput(){
 
     const searchFilterByLatLong = async () =>{
         if(latitude!=0 &&longitude!=0){
-            const baseUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=8cc4425f35ba29f093ad17a16105340d&units=metric`
+            const baseUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.NEXT_PUBLIC_WHEATHER_KEY}&units=metric`
             const data:any = await axios.get(baseUrl).then(resp=>resp.data);
             setStatusWeather(data.weather[0].main);
             setDesciption(data.weather[0].description);

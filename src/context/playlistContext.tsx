@@ -53,8 +53,8 @@ export default function PlaylistProvider({children}:PlaylistContextProviderProps
             
 
         if(temp<16){
-            setGenre("LoFi Hip Hop")
-            return "LoFi Hip Hop"
+            setGenre("lofi hip-hop")
+            return "lofi hip-hop"
         }
             
         return "";
