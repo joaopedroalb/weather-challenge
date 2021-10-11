@@ -4,6 +4,7 @@ type Song = {
     title:string;
     artirst:string;
     imagePath:string;
+    songPath:string;
 
 }
 

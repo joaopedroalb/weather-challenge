@@ -6,10 +6,12 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react'
 
 import { playlistContext } from '../../context/playlistContext'
+import { WeatherContext } from '../../context/weatherContext';
 
 export default function ListCard(){
 
     const {songList,genre} = useContext(playlistContext)
+    const {city} = useContext(WeatherContext)
 
     const sucessToast = () =>{
         toast.success('Playlist adicionada com sucesso', {
@@ -27,9 +29,8 @@ export default function ListCard(){
     function createPlaylist(){
         const horaAgora = new Date()
         const listTime = [horaAgora.getTime()]
-        const numPlaylist = localStorage.length;
         const keyLocalStorage = `playlist-${horaAgora.getTime()}`
-        const listSongJson = JSON.stringify({songList,genre,horaAgora,keyLocalStorage})
+        const listSongJson = JSON.stringify({songList,genre,horaAgora,city,keyLocalStorage})
         
         localStorage.setItem(keyLocalStorage,listSongJson);
         if(!localStorage.getItem("saveKeys")){
@@ -59,7 +60,7 @@ export default function ListCard(){
                     })
                 }
             </ul>
-            <button onClick={_=>createPlaylist()}>Adicionar playlist</button>
+            <button onClick={_=>createPlaylist()} className={styles.btnAdd}>Adicionar playlist</button>
         </section>
     )
 }

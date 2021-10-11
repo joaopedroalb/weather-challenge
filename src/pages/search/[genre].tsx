@@ -47,7 +47,7 @@ export default function Search(){
         setData(dataAux.tracks.hits);
         let songListAux:any = [];
         dataAux.tracks.hits.map((e:any,i:number)=>{
-            songListAux.push({title:e.track.title,artirst:e.track.subtitle,imagePath:e.track.images.coverart});
+            songListAux.push({title:e.track.title,artirst:e.track.subtitle,imagePath:e.track.images.coverart,songPath:e.track.share.href});
         })
         setSongList(songListAux);
     }

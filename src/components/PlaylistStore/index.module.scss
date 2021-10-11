@@ -16,13 +16,13 @@
     border-left: 1px solid rgba(255,255,255,0.5);
     backdrop-filter:blur(5px);
 
-    button{
+    .removeBtn{
         padding: 2px;
         min-width: 6rem;
         height: 2rem;
         border-radius: 1rem;
         border: 0;
-        background-color: #6d23b6;
+        background-color: #e63946;
         color: #fff;
         font-weight: 600;
         cursor: pointer;
@@ -46,6 +46,7 @@
             background-color: #3b3b3bd4;
             border-radius: .75rem;
             transition: .4s;
+            cursor: pointer;
             img{
                 object-fit: cover;
                 width: 60px;
@@ -71,4 +72,19 @@
 
 .disable{
     display: none;
+}
+
+.headerNotes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+
+    h1{
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    h2{
+        font-size: 1.15rem;
+    }
 }
