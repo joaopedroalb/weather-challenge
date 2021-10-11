@@ -13,7 +13,7 @@ import ListCard from '../../components/ListCard'
 import Navbar from '../../components/Navbar'
 
 export default function Search(){
-
+    
     const {chooseGenre,setSongList} = useContext(playlistContext)
     const {temp} = useContext(WeatherContext)
 

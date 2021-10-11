@@ -1,14 +1,17 @@
 import { useState } from 'react'
 import styles from './index.module.scss'
 
-export default function PlaylistStore(props:{list:any}){
+
+export default function PlaylistStore(props:{list:any,deleteToast:any}){
     
     const [disableList,setDisableList] = useState(false);
     const formateDate = new Date (props.list.horaAgora).toLocaleString("pt-BR")
 
+
     function removerPlaylist(){
         localStorage.removeItem(props.list.keyLocalStorage)
         setDisableList(true)
+        props.deleteToast();
     }
 
     return(

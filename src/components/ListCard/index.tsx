@@ -1,5 +1,8 @@
 import styles from './index.module.scss'
 
+import {ToastContainer,toast,Zoom,Bounce} from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 import { useContext } from 'react'
 
 import { playlistContext } from '../../context/playlistContext'
@@ -7,6 +10,19 @@ import { playlistContext } from '../../context/playlistContext'
 export default function ListCard(){
 
     const {songList,genre} = useContext(playlistContext)
+
+    const sucessToast = () =>{
+        toast.success('Playlist adicionada com sucesso', {
+            position: "bottom-left",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme:'colored'
+            });
+    }
 
     function createPlaylist(){
         const horaAgora = new Date()
@@ -25,16 +41,14 @@ export default function ListCard(){
                 arrKeys.listTime.push(horaAgora.getTime())
                 console.log(arrKeys.listTime)
                 localStorage.setItem("saveKeys",JSON.stringify(arrKeys));
-            }
-            
-            
-            
-            
+            }  
         }
+        sucessToast()
     }
 
     return(
         <section className={styles.container}>
+            <ToastContainer/>
             <ul>
                 {
                     songList.map((e,i:number)=>{
