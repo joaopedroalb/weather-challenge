@@ -10,14 +10,15 @@ export default function MyList(){
     const [loading,setLoading] = useState(true)
     
     useEffect(()=>{
-        const tamanho = localStorage.length
-        for(let i:number = 0; i<tamanho; i++){
-            const playListOnStorage = localStorage.getItem(`playlist-${i}`)
+        const keys = localStorage.getItem("saveKeys")
+        const arrKeys = keys?JSON.parse(keys):[]
+
+        arrKeys.listTime.forEach((e:any) => {
+            const playListOnStorage = localStorage.getItem(`playlist-${e}`)
             if(playListOnStorage){
                 playlistArr.push(JSON.parse(playListOnStorage));
             }
-            
-        }
+        });
         setLoading(false)
     },[])    
 
