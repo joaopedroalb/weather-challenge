@@ -15,13 +15,19 @@
         background-color: #e63946;
         font-weight: 600;
     }
+
+    header{
+        h2{
+            text-align: center;
+        }
+    }
 }
 
 .inputContainer{
     display: flex;
     flex-direction: column;  
     align-items: center; 
-    gap: 4rem; 
+    gap: 3rem; 
     
     select{
         height: 1.75rem;

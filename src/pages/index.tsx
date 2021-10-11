@@ -15,8 +15,8 @@ const Home: NextPage = () => {
   return (
     <section className={styles.container}>
       <Navbar/>
-      <header>
-        <h1>Bem vindo</h1>
+      <header className={styles.headerStuff}>
+        <img src="./search-place.svg"/>
       </header>
       <SearchInput/>
     </section>

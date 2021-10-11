@@ -11,4 +11,12 @@
     h1{
         font-size: 3rem;
     }
+    .headerStuff{
+        display: flex;
+        align-items: center;
+        img{
+            height: 270px;
+            width: 270px;
+        }
+    }
 }
