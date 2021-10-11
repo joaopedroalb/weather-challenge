@@ -36,17 +36,30 @@
         padding: 4px;
         font-weight: 500;
         width: 200px;
-    }
+        background: #383551a6;
+        color: #fff;
 
-    option{
-        border-radius: 1rem;
+        &:focus{
+            outline: none;
+        }
     }
 
     .cityInput{
         height: 2rem;
-        border-radius: 1rem;
         padding: 8px;
         width: 300px;
+    }
+
+    input{
+        border-radius: .4rem;
+        background: #c1c1c1;
+        transition: .2s;
+
+        &:focus{
+            outline: none;
+            border: 2px solid;
+            background: #fff;
+        }
     }
 
     .doubleInputContainer{
@@ -55,7 +68,6 @@
 
         .doubleInputs{
             height: 2rem;
-            border-radius: 1rem;
             padding: 8px;
             width: 150px;
         }
