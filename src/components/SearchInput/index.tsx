@@ -56,7 +56,7 @@ export default function SearchInput(){
             setTemp(data.main.temp);
             setStatusWeather(data.weather[0].main);
             setDesciption(data.weather[0].description);
-            router.push(`/search/${chooseGenre(temp)}`);
+            router.push(`/search/${chooseGenre(data.main.temp)}`);
         }
     }
 
