@@ -57,7 +57,7 @@ export default function Search(){
             <Navbar/>
             {data.length>0?
             <div>
-                <h1>Para acompanhar esse clima de {Math.round(temp)}°C talvez você curta essa playlist de {genreParams}</h1>
+                <h1 className={styles.title}>Para acompanhar esse clima de {Math.round(temp)}°C talvez você curta essa playlist de <strong>{genreParams}</strong></h1>
                 <ListCard/>
             </div>
             
