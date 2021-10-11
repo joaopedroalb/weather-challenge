@@ -19,7 +19,8 @@ export default function PlaylistStore(props:{list:any}){
                     props.list.songList.map((song:any,index:number)=>{
                         return(
                             <li key={index}>
-                                <p >{index+1}. {song.title} - {song.artirst}</p>
+                                <img src={song.imagePath} alt="Song Image"/>
+                                <p>{index+1}. {song.title} - {song.artirst}</p>
                             </li>
                             
                         )
