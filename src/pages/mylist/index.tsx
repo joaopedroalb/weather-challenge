@@ -3,6 +3,7 @@ import styles from './index.module.scss'
 
 import { useEffect, useState } from "react";
 import PlaylistStore from "../../components/PlaylistStore";
+import EmptyplaylistMsg from "../../components/EmptyplaylistMsg";
 
 export default function MyList(){
     const [playlistArr,setPlaylistArr] = useState<any>([]);
@@ -23,15 +24,22 @@ export default function MyList(){
     return(
         <section className={styles.container}>
             <Navbar/>
-            <div className={styles.listContainer}>
             {
-                playlistArr.map((e:any,i:number)=>{
-                    return(
-                        <PlaylistStore list={e} key={i} />
-                    )
-                })
+                playlistArr.length>0?
+                
+                <div className={styles.listContainer}>
+                    {
+                        playlistArr.map((e:any,i:number)=>{
+                            return(
+                                <PlaylistStore list={e} key={i} />
+                            )
+                        })
+                    }
+                 </div>
+                :
+                <EmptyplaylistMsg/>
             }
-            </div>
+            
         </section>
     )
 }

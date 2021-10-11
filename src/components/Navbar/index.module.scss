@@ -1,6 +1,5 @@
 .container{
     width: 100%;
-
     ul{
         list-style: none;
         display: flex;
@@ -19,7 +18,12 @@
         text-align: inherit;
         display: flex;
         align-items: center;
-        background-color: #e63946;
+        background-color: #e6394700;
         color: #fff;
+        transition: .2s;
+        font-size: 1rem;
+        &:hover{
+            color: #fc3d4d;
+        }
     }
 }
