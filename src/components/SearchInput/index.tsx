@@ -1,4 +1,4 @@
-import { useState,useContext,useEffect } from 'react'
+import { useState,useContext } from 'react'
 import styles from './index.module.scss'
 
 import { WeatherContext } from '../../context/weatherContext'
@@ -11,7 +11,7 @@ import {useRouter} from 'next/router'
 
 export default function SearchInput(){
 
-    const {city,temp,setCity,latitude,setLatitude,longitude,setLongitude,setTemp,setDesciption,setStatusWeather} = useContext(WeatherContext)
+    const {city,setCity,latitude,setLatitude,longitude,setLongitude,setTemp} = useContext(WeatherContext)
     const {chooseGenre} = useContext(playlistContext)
     const [filter,setFilter] = useState(0)
 
@@ -42,8 +42,6 @@ export default function SearchInput(){
             const baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.NEXT_PUBLIC_WHEATHER_KEY}&units=metric`
             const data:any = await axios.get(baseUrl).then(resp=>resp.data);
             setTemp(data.main.temp);
-            setStatusWeather(data.weather[0].main);
-            setDesciption(data.weather[0].description);
             router.push(`/search/${chooseGenre(data.main.temp)}`);
             
         }
@@ -54,8 +52,6 @@ export default function SearchInput(){
             const baseUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.NEXT_PUBLIC_WHEATHER_KEY}&units=metric`
             const data:any = await axios.get(baseUrl).then(resp=>resp.data);
             setTemp(data.main.temp);
-            setStatusWeather(data.weather[0].main);
-            setDesciption(data.weather[0].description);
             router.push(`/search/${chooseGenre(data.main.temp)}`);
         }
     }

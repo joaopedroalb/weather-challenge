@@ -1,10 +1,8 @@
 import { useState } from 'react'
 import styles from './index.module.scss'
 
-import Link from 'next/link'
 
-
-export default function PlaylistStore(props:{list:any,deleteToast:any}){
+export default function PlaylistStore(props:{list:any,deleteToast:any,deleteItem:any}){
     
     const [disableList,setDisableList] = useState(false);
     
@@ -25,7 +23,7 @@ export default function PlaylistStore(props:{list:any,deleteToast:any}){
 
     function removerPlaylist(){
         localStorage.removeItem(props.list.keyLocalStorage)
-        setDisableList(true)
+        props.deleteItem();
         props.deleteToast();
     }
 
